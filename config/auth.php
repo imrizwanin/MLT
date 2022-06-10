@@ -17,6 +17,18 @@ return [
         'guard' => 'web',
         'passwords' => 'users',
     ],
+    'admin'=>[
+        'driver'=>'eloquent',
+        'model'=>App\Models\Admin::class,
+     ],
+     'author'=>[
+         'driver'=>'eloquent',
+         'model'=>App\Models\Author::class,
+      ],
+     'reader'=>[
+         'driver'=>'eloquent',
+         'model'=>App\Models\Reader::class,
+      ],
 
     /*
     |--------------------------------------------------------------------------
@@ -40,7 +52,19 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-    ],
+        'admin'=>[
+            'driver'=>'session',
+            'provider'=>'admins',
+         ],
+         'author'=>[
+             'driver'=>'session',
+             'provider'=>'authors',
+          ],
+         'reader'=>[
+             'driver'=>'session',
+             'provider'=>'readers',
+          ],
+        ],
 
     /*
     |--------------------------------------------------------------------------
@@ -64,6 +88,18 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
+        'admins'=>[
+            'driver'=>'eloquent',
+            'model'=>App\Models\Admin::class,
+         ],
+         'authors'=>[
+             'driver'=>'eloquent',
+             'model'=>App\Models\Author::class,
+          ],
+         'readers'=>[
+             'driver'=>'eloquent',
+             'model'=>App\Models\Reader::class,
+          ],
 
         // 'users' => [
         //     'driver' => 'database',
@@ -93,6 +129,18 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
+        'admins'=>[
+            'driver'=>'eloquent',
+            'model'=>App\Models\Admin::class,
+         ],
+         'authors'=>[
+             'driver'=>'eloquent',
+             'model'=>App\Models\Author::class,
+          ],
+         'readers'=>[
+             'driver'=>'eloquent',
+             'model'=>App\Models\Reader::class,
+          ],
     ],
 
     /*
