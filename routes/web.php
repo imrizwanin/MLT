@@ -66,11 +66,13 @@ Route::prefix('admin')->name('admin.')->group(function () {
 });
 
 Route::prefix('reader')->name('reader.')->group(function () {
-    Route::middleware(['guest:reader', 'PreventBackHistory'])->group(function () {
+    Route::middleware(['guest:reader', 'PreventBackHistory','IsVerifiedEmail'])->group(function () {
         Route::view('/login', 'dashboard.reader.login')->name('login');
         Route::view('/register', 'dashboard.reader.register')->name('register');
         Route::post('/create', [ReaderController::class, 'create'])->name('create');
         Route::post('/check', [ReaderController::class, 'check'])->name('check');
+        Route::get('/verify', [ReaderController::class, 'verify'])->name('verify');
+
     });
     Route::middleware(['auth:reader', 'PreventBackHistory'])->group(function () {
         Route::view('/home', 'dashboard.reader.home')->name('home');

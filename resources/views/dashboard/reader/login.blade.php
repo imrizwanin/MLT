@@ -19,6 +19,11 @@
                             {{ Session::get('fail') }}
                         </div>
                     @endif
+                    @if (Session::get('info'))
+                        <div class="alert alert-info">
+                            {{ Session::get('info') }}
+                        </div>
+                    @endif
                     @csrf
                       <div class="form-group">
                           <label for="email">Email</label>

@@ -22,6 +22,7 @@ class Reader extends Authenticatable
         'name',
         'email',
         'password',
+        'email_verified'
     ];
 
     /**
